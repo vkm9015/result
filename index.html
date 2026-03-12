@@ -2,284 +2,160 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>DigiLocker</title>
+<title>Digital Document Verification</title>
 
 <style>
 
 body{
-font-family: Arial, Helvetica, sans-serif;
+font-family: Arial, sans-serif;
 background:#f2f2f2;
 margin:0;
-color:#555;
 }
 
-/* Header */
-
-.topbar{
-display:flex;
-align-items:center;
-background:#eeeeee;
-padding:12px;
-}
-
-.back{
-font-size:22px;
-margin-right:10px;
-}
-
-.logo-area{
-display:flex;
-align-items:center;
-}
-
-.logo-area img{
-height:28px;
-margin-right:8px;
-}
-
-.title{
-font-size:22px;
-font-weight:bold;
-color:#673ab7;
-}
-
-/* Board */
-
-.board{
-display:flex;
-align-items:center;
-background:white;
+.header{
+background:#0b5ed7;
+color:white;
 padding:15px;
-border-bottom:1px solid #ddd;
-}
-
-.logo-left img{
-height:55px;
-margin-right:15px;
-}
-
-.board-text{
 text-align:center;
-width:100%;
-font-size:15px;
-color:#777;
+font-size:22px;
 }
 
-/* Result Box */
-
-.container{
-background:white;
-margin:15px;
-padding:18px;
-border-radius:6px;
-}
-
-.row{
-display:flex;
-padding:8px 0;
-}
-
-.label{
-width:40%;
-font-weight:bold;
-color:#666;
-}
-
-.colon{
-width:5%;
+.verify-box{
 text-align:center;
+margin-top:120px;
 }
 
-.value{
-width:55%;
-color:#777;
+.loader{
+border:6px solid #f3f3f3;
+border-top:6px solid #0b5ed7;
+border-radius:50%;
+width:60px;
+height:60px;
+animation:spin 1s linear infinite;
+margin:auto;
 }
 
-/* Academic Section */
-
-.academic-title{
-margin-top:15px;
-font-weight:bold;
-color:#666;
+@keyframes spin{
+0%{transform:rotate(0deg);}
+100%{transform:rotate(360deg);}
 }
 
-.academic-box{
-background:#f1f1f1;
-padding:15px;
-margin-top:8px;
+.result{
+display:none;
+padding:20px;
 }
 
-/* Table */
-
-table{
+.table{
 width:100%;
 border-collapse:collapse;
+background:white;
 }
 
-th{
-font-size:14px;
-font-weight:bold;
-text-align:left;
-padding:12px 5px;
-color:#666;
+.table th{
+background:#e6f0ff;
+padding:10px;
+border:1px solid #ccc;
 }
 
-td{
-padding:12px 5px;
-font-size:14px;
-color:#666;
-}
-
-/* Column Width Fix */
-
-td:first-child{
-width:65%;
-text-align:left;
-}
-
-td:nth-child(2){
-width:17%;
-text-align:center;
-}
-
-td:nth-child(3){
-width:18%;
-text-align:center;
-}
-
-/* Digi image */
-
-.verify{
-margin-top:20px;
-}
-
-.verify img{
-max-width:100%;
-height:auto;
+.table td{
+padding:10px;
+border:1px solid #ccc;
 }
 
 </style>
+
+<script>
+
+function showResult(){
+document.getElementById("verify").style.display="none";
+document.getElementById("result").style.display="block";
+}
+
+setTimeout(showResult,2000);
+
+</script>
+
 </head>
 
 <body>
 
-<!-- Header -->
-
-<div class="topbar">
-
-<div class="back">&#8592;</div>
-
-<div class="logo-area">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Emblem_of_India.svg/120px-Emblem_of_India.svg.png">
-<div class="title">DigiLocker</div>
+<div class="header">
+Verified Digital Document
 </div>
 
-</div>
+<div id="verify" class="verify-box">
 
-<!-- Board -->
+<div class="loader"></div>
 
-<div class="board">
+<h2>Verifying Digital Document...</h2>
 
-<div class="logo-left">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Emblem_of_India.svg/120px-Emblem_of_India.svg.png">
-</div>
-
-<div class="board-text">
-<div>CENTRAL BOARD OF SECONDARY EDUCATION</div>
-<div>EXAMINATION 2024</div>
-</div>
+<p>Please wait while the document is being verified.</p>
 
 </div>
 
-<!-- Result -->
+<div id="result" class="result">
 
-<div class="container">
+<h2>Punjab School Education Board</h2>
 
-<div class="row">
-<div class="label">NAME</div>
-<div class="colon">:</div>
-<div class="value">HARSH JAIN</div>
-</div>
-
-<div class="row">
-<div class="label">CLASS</div>
-<div class="colon">:</div>
-<div class="value">X</div>
-</div>
-
-<div class="row">
-<div class="label">ROLL NO.</div>
-<div class="colon">:</div>
-<div class="value">21102749</div>
-</div>
-
-<div class="row">
-<div class="label">DOB</div>
-<div class="colon">:</div>
-<div class="value">24/10/2006</div>
-</div>
-
-<div class="row">
-<div class="label">SCHOOL NAME</div>
-<div class="colon">:</div>
-<div class="value">PRELUDE PUB SCHOOL JAGANPUR DAYALBAGH AGRA UP</div>
-</div>
-
-<div class="row">
-<div class="label">RESULT</div>
-<div class="colon">:</div>
-<div class="value">PASS</div>
-</div>
-
-<div class="academic-title">Academic Performance:</div>
-
-<div class="academic-box">
-
-<table>
+<table class="table">
 
 <tr>
-<th>SUBJECT</th>
-<th style="text-align:center;">THEORY</th>
-<th style="text-align:center;">PRACTICAL</th>
+<th>Name</th>
+<td>Rahul Kumar</td>
 </tr>
 
 <tr>
-<td>ENGLISH LNG & LIT.</td>
-<td>061</td>
-<td>018</td>
+<th>Father Name</th>
+<td>Ramesh Kumar</td>
 </tr>
 
 <tr>
-<td>HINDI COURSE-A</td>
-<td>060</td>
-<td>018</td>
+<th>Roll Number</th>
+<td>12345678</td>
 </tr>
 
 <tr>
-<td>SCIENCE</td>
-<td>068</td>
-<td>018</td>
-</tr>
-
-<tr>
-<td>SOCIAL SCIENCE</td>
-<td>074</td>
-<td>018</td>
-</tr>
-
-<tr>
-<td>ARTIFICIAL<br>INTELLIGENCE</td>
-<td>079</td>
-<td>048</td>
+<th>Course</th>
+<td>Secondary Course</td>
 </tr>
 
 </table>
 
-</div>
+<br>
 
-<div class="verify">
-<img src="https://i.ibb.co/1t8KqmLR/digi-removebg-preview.png">
-</div>
+<table class="table">
+
+<tr>
+<th>Subject</th>
+<th>Marks</th>
+</tr>
+
+<tr>
+<td>Hindi</td>
+<td>65</td>
+</tr>
+
+<tr>
+<td>English</td>
+<td>72</td>
+</tr>
+
+<tr>
+<td>Mathematics</td>
+<td>58</td>
+</tr>
+
+<tr>
+<td>Science</td>
+<td>61</td>
+</tr>
+
+<tr>
+<td>Social Science</td>
+<td>70</td>
+</tr>
+
+</table>
 
 </div>
 
